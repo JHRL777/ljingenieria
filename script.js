@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const navItems = navLinks.querySelectorAll('a');
 
     menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active'); // Alterna la visibilidad del menú
+        const isOpen = navLinks.classList.toggle('active'); // Alterna la visibilidad del menú
+        menuToggle.setAttribute('aria-expanded', isOpen); // Accesibilidad
     });
 
     navItems.forEach(item => {
         item.addEventListener('click', function() {
             navLinks.classList.remove('active'); // Oculta el menú al hacer clic en un enlace
+            menuToggle.setAttribute('aria-expanded', 'false');
         });
     });
 });

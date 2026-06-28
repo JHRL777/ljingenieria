@@ -3,18 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L&J Ingeniería y Construcción S.A.S</title>
-    <link rel="shortcut icon" href="./sources/imgs/Logo.png">
+
+    <!-- ===== SEO básico ===== -->
+    <title>L&J Ingeniería y Construcción S.A.S | Obra Civil y Construcción </title>
+    <meta name="description" content="Empresa de ingeniería y construcción en Bogotá con más de 10 años de experiencia. Construcción de vías, redes de acueducto, estabilización de terrenos, urbanismo y obra civil para constructoras, consorcios y entidades públicas. Solicita tu cotización.">
+    <meta name="keywords" content="construcción Bogotá, ingeniería civil Bogotá, empresa de construcción, obra civil, construcción de vías, rehabilitación de tuberías, urbanismo, montaje de estructuras, reparación de acometidas, contratista obra civil Bogotá">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="L&J Ingeniería y Construcción S.A.S">
+    <link rel="canonical" href="https://ljingenieria.vercel.app/">
+
+    <!-- ===== Open Graph (Facebook, WhatsApp, LinkedIn) ===== -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="L&J Ingeniería y Construcción S.A.S | Obra Civil en Bogotá">
+    <meta property="og:description" content="Más de 10 años construyendo soluciones de ingeniería civil en Bogotá: vías, redes hidráulicas, urbanismo y estructuras. Conoce nuestros proyectos.">
+    <meta property="og:image" content="https://ljingenieria.vercel.app/sources/imgs/banner-construccion-civil-bogota.jpg">
+    <meta property="og:url" content="https://ljingenieria.vercel.app/">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="L&J Ingeniería y Construcción S.A.S">
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="L&J Ingeniería y Construcción S.A.S">
+    <meta name="twitter:description" content="Construcción y obra civil en Bogotá: vías, redes hidráulicas, urbanismo y estructuras.">
+    <meta name="twitter:image" content="https://ljingenieria.vercel.app/sources/imgs/banner-construccion-civil-bogota.jpg">
+
+    <!-- ===== Favicon ===== -->
+    <link rel="shortcut icon" href="./sources/imgs/logo-lj-ingenieria-construccion.png">
+    <link rel="apple-touch-icon" href="./sources/imgs/logo-lj-ingenieria-construccion.png">
+
+    <!-- Mejora el LCP precargando la imagen del banner -->
+    <link rel="preload" as="image" href="./sources/imgs/banner-construccion-civil-bogota.jpg">
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- ===== Datos estructurados (Schema.org) para Google ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "L&J Ingeniería y Construcción S.A.S",
+      "image": "https://ljingenieria.vercel.app/sources/imgs/banner-construccion-civil-bogota.jpg",
+      "logo": "https://ljingenieria.vercel.app/sources/imgs/logo-lj-ingenieria-construccion.png",
+      "url": "https://ljingenieria.vercel.app/",
+      "telephone": "+573142982778",
+      "email": "lyjingenieriayconstruccion@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "CR 100A #41-72 Sur",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Bogotá D.C.",
+        "addressCountry": "CO"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bogotá"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://wa.me/573142982778"
+      ],
+      "description": "Empresa de ingeniería y construcción en Bogotá especializada en obra civil, construcción de vías, redes hidráulicas, urbanismo y montaje de estructuras."
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="./sources/imgs/Logo.png" alt="">
+                <img src="./sources/imgs/logo-lj-ingenieria-construccion.png" alt="Logo de L&J Ingeniería y Construcción S.A.S" width="50" height="45">
                 L&J Ingeniería y Construcción S.A.S
             </div>
-            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#about">Sobre Nosotros</a></li>
@@ -25,14 +84,25 @@
         </nav>
         <section id="home" class="hero">
             <div class="hero-content">
-                
-                <h1>Transformamos tus ideas en realidad</h1>
-                <p>Innovación, Calidad y Eficiencia en Cada Proyecto.</p>
-                <a href="#contact" class="cta-button">Contáctanos</a>
+                <h1>Construcción e Ingeniería Civil</h1>
+                <p>Transformamos tus ideas en realidad: innovación, calidad y eficiencia en cada proyecto.</p>
+                <a href="#contact" class="cta-button">Solicita tu cotización</a>
             </div>
         </section>
     </header>
     <main>
+        <!-- Barra de confianza: clientes y proyectos reconocidos -->
+        <section class="trust-bar" aria-label="Clientes y aliados">
+            <p class="trust-bar-title">Hemos trabajado con:</p>
+            <ul class="trust-bar-list">
+                <li>Constructora Bolívar</li>
+                <li>IDU – Instituto de Desarrollo Urbano</li>
+                <li>Consorcio Río Blanco (Acueducto de Bogotá – Chingaza)</li>
+                <li>Clínica Cardioinfantil</li>
+                <li>Consorcio Vías por Bogotá</li>
+            </ul>
+        </section>
+
         <section id="about" class="about">
             <div class="container">
                 <h2>Sobre Nosotros</h2>
@@ -44,261 +114,237 @@
                         <p><strong>Visión:</strong> L&J Ingeniería y Construcción S.A.S se proyecta para que en el año 2025, esté consolidada como una de las empresas de mayor eficiencia en la región cundiboyacense, al ser una compañía innovadora que presta valores agregados en la reducción de costos y optimización de recursos en los servicios que presta a sus aliados comerciales.</p>
                     </div>
                 </div>
-
             </div>
-            
-            </section>
-            <section id="services" class="services">
-                <div class="container">
-                    <h2>Portafolio de Servicios</h2>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <h3>Reparación de Acometidas</h3>
-                            <p>Servicios especializados en reparación y mantenimiento de acometidas.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Rehabilitación de Tuberías</h3>
-                            <p>Rehabilitación y reemplazo de tuberías para mejorar el sistema de distribución.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Excavaciones y Perforaciones</h3>
-                            <p>Excavaciones y perforaciones para diferentes tipos de proyectos.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Recuperación de Espacio Público</h3>
-                            <p>Recuperación y rehabilitación de espacios públicos.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Montaje de Estructuras</h3>
-                            <p>Montaje y construcción de estructuras según los estándares de calidad.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Urbanismo y Espacio Público</h3>
-                            <p>Servicios de urbanismo y planificación del espacio público.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Construcciones y Edificaciones</h3>
-                            <p>Construcción y edificación de proyectos residenciales y comerciales.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Obra Civil en General</h3>
-                            <p>Servicios generales de obra civil para diversos proyectos.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Construcción de Vías</h3>
-                            <p>Construcción y mantenimiento de vías y carreteras.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Obra Blanca y Acabados</h3>
-                            <p>Acabados y trabajos finales en proyectos de construcción.</p>
-                        </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Portafolio de Servicios de Construcción e Ingeniería Civil</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Reparación de Acometidas</h3>
+                        <p>Servicios especializados en reparación y mantenimiento de acometidas.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Rehabilitación de Tuberías</h3>
+                        <p>Rehabilitación y reemplazo de tuberías para mejorar el sistema de distribución.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Excavaciones y Perforaciones</h3>
+                        <p>Excavaciones y perforaciones para diferentes tipos de proyectos.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Recuperación de Espacio Público</h3>
+                        <p>Recuperación y rehabilitación de espacios públicos.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Montaje de Estructuras</h3>
+                        <p>Montaje y construcción de estructuras según los estándares de calidad.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Urbanismo y Espacio Público</h3>
+                        <p>Servicios de urbanismo y planificación del espacio público.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Construcciones y Edificaciones</h3>
+                        <p>Construcción y edificación de proyectos residenciales y comerciales.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Obra Civil en General</h3>
+                        <p>Servicios generales de obra civil para diversos proyectos.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Construcción de Vías</h3>
+                        <p>Construcción y mantenimiento de vías y carreteras.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Obra Blanca y Acabados</h3>
+                        <p>Acabados y trabajos finales en proyectos de construcción.</p>
                     </div>
                 </div>
-            </section>
-            <section id="portfolio" class="portfolio">
-                <h2>Proyectos Destacados</h2>
-                <div class="container-porf">
-                    
-                    
-                    <div class="portfolio-item" id="portfolio-item-1">
-                        <!-- Imagen principal del proyecto -->
-                        <div class="main-image">
-                            <img class="main-img" src="./sources/imgs/CONSTRUCTORA BOLIVAR-1.jpg" alt="Imagen principal del proyecto">
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>Proyectos Destacados</h2>
+            <div class="container-porf">
+
+                <div class="portfolio-item" id="portfolio-item-1">
+                    <div class="main-image">
+                        <img class="main-img" src="./sources/imgs/proyecto-heliconia-constructora-bolivar-1.jpg" alt="Reforzamiento de viga perimetral - Proyecto Heliconia, Constructora Bolívar" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-2.jpg" alt="Vista 2 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
                         </div>
-                        
-                        <!-- Galería de imágenes -->
-                        <div class="gallery" style="display: flex; gap: 2px;">
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/CONSTRUCTORA BOLIVAR-2.png" alt="Imagen de la galería 1" onclick="changeMainImage(this, 'portfolio-item-1')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/CONSTRUCTORA BOLIVAR-3.png" alt="Imagen de la galería 2" onclick="changeMainImage(this, 'portfolio-item-1')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/CONSTRUCTORA BOLIVAR-4.png" alt="Imagen de la galería 3" onclick="changeMainImage(this, 'portfolio-item-1')">
-                            </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-3.jpg" alt="Vista 3 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
                         </div>
-                        
-                        <!-- Descripción del proyecto -->
-                        <div class="project-description">
-                            <h2>Proyecto Heliconia</h2>
-                            <p>Constructora Bolívar: Reparación y construcción (reforzamiento) de viga perimetral para estabilización de conjunto residencial. Contrato No 10651270</p>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-4.jpg" alt="Vista 4 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
                         </div>
                     </div>
-                    
-                    <div class="portfolio-item" id="portfolio-item-2">
-                        <!-- Imagen principal del proyecto -->
-                        <div class="main-image">
-                            <img class="main-img" src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO-1.png" alt="Imagen principal del proyecto">
-                        </div>
-                        
-                        <!-- Galería de imágenes -->
-                        <div class="gallery" style="display: flex; gap: 2px;">
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO-1.png" alt="Imagen de la galería 1" onclick="changeMainImage(this, 'portfolio-item-2')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO-2.png" alt="Imagen de la galería 2" onclick="changeMainImage(this, 'portfolio-item-2')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO-3.png" alt="Imagen de la galería 3" onclick="changeMainImage(this, 'portfolio-item-2')">
-                            </div>
-                        </div>
-                        
-                        <!-- Descripción del proyecto -->
-                        <div class="project-description">
-                            <h2>Proyecto Caminos del Vínculo</h2>
-                            <p>Constructora Bolívar: Construcción de viga de cerramiento definitivo y muro en gavión para estabilización de terreno Torre 16 y 17. Contrato No 11610266</p>
-                        </div>
-                    </div>
-                     <!-- Imagen principal del proyecto 3 -->
-                    <div class="portfolio-item" id="portfolio-item-3">
-                        <!-- Imagen principal del proyecto -->
-                        <div class="main-image">
-                            <img class="main-img" src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO CONSTRUCCION DE CUNETA SISTEMA DE DESAGUE PARA LADERA-1.png" alt="Imagen principal del proyecto">
-                        </div>
-                        
-                        <!-- Galería de imágenes -->
-                        <div class="gallery" style="display: flex; gap: 2px;">
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO CONSTRUCCION DE CUNETA SISTEMA DE DESAGUE PARA LADERA-1.png" alt="Imagen de la galería 1" onclick="changeMainImage(this, 'portfolio-item-3')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO CONSTRUCCION DE CUNETA SISTEMA DE DESAGUE PARA LADERA-2.png" alt="Imagen de la galería 2" onclick="changeMainImage(this, 'portfolio-item-3')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CAMINOS DEL VINCULO CONSTRUCCION DE CUNETA SISTEMA DE DESAGUE PARA LADERA-3.png" alt="Imagen de la galería 3" onclick="changeMainImage(this, 'portfolio-item-3')">
-                            </div>
-                        </div>
-                        
-                        <!-- Descripción del proyecto -->
-                        <div class="project-description">
-                            <h2>Proyecto Caminos del Vínculo cuneta</h2>
-                            <p>Constructora Bolívar: Construcción de cuneta sistema de desagüe para ladera. Contrato No 11610267</p>
-                        </div>
-                    </div>
-
-
-                     <!-- Imagen principal del proyecto 4 -->
-                    <div class="portfolio-item" id="portfolio-item-4">
-                        <!-- Imagen principal del proyecto -->
-                        <div class="main-image">
-                            <img class="main-img" src="./sources/imgs/PROYECTO CONSTRUCCION DE CALZADA LA SIRENA-1.png" alt="Imagen principal del proyecto">
-                        </div>
-                        
-                        <!-- Galería de imágenes -->
-                        <div class="gallery" style="display: flex; gap: 2px;">
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CONSTRUCCION DE CALZADA LA SIRENA-2.png" alt="Imagen de la galería 1" onclick="changeMainImage(this, 'portfolio-item-4')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CONSTRUCCION DE CALZADA LA SIRENA-3.png" alt="Imagen de la galería 2" onclick="changeMainImage(this, 'portfolio-item-4')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CONSTRUCCION DE CALZADA LA SIRENA-4.png" alt="Imagen de la galería 3" onclick="changeMainImage(this, 'portfolio-item-4')">
-                            </div>
-                        </div>
-                        
-                        <!-- Descripción del proyecto -->
-                        <div class="project-description">
-                            <h2>Proyecto construccion de calzada la sirena</h2>
-                            <p>Consorcio vias por bogota ic:Proyecto construccion de calzada la sirena calle 153 av boyaca (consorcio vias por bogota ic) contrato n0 cont –011 (idu –1810 de 2021) </p>
-                        </div>
-                    </div>
-
-                     <!-- Imagen principal del proyecto 5 -->
-                    <div class="portfolio-item" id="portfolio-item-5">
-                        <!-- Imagen principal del proyecto -->
-                        <div class="main-image">
-                            <img class="main-img" src="./sources/imgs/PROYECTO CHINGAZA CONSORCIO RIO BLANCO-1.png" alt="Imagen principal del proyecto">
-                        </div>
-                        
-                        <!-- Galería de imágenes -->
-                        <div class="gallery" style="display: flex; gap: 2px;">
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CHINGAZA CONSORCIO RIO BLANCO-1.png" alt="Imagen de la galería 1" onclick="changeMainImage(this, 'portfolio-item-5')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CHINGAZA CONSORCIO RIO BLANCO-2.png" alt="Imagen de la galería 2" onclick="changeMainImage(this, 'portfolio-item-5')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/PROYECTO CHINGAZA CONSORCIO RIO BLANCO-3.png" alt="Imagen de la galería 3" onclick="changeMainImage(this, 'portfolio-item-5')">
-                            </div>
-                        </div>
-                        
-                        <!-- Descripción del proyecto -->
-                        <div class="project-description">
-                            <h2>Proyecto Chingaza Consorcio Rio Blanco (Acueducto) </h2>
-                            <p>Consorcio Rio Blanco:CONSTRUCCION DE BOCATOMAS Y ESTABILIZACION DE TERRENO</p>
-                        </div>
-                    </div>
-
-                     <!-- Imagen principal del proyecto 6 -->
-                    <div class="portfolio-item" id="portfolio-item-6">
-                        <!-- Imagen principal del proyecto -->
-                        <div class="main-image">
-                            <img class="main-img" src="./sources/imgs/CLINICA CARDIO INFANTIL-1.png" alt="Imagen principal del proyecto">
-                        </div>
-                        
-                        <!-- Galería de imágenes -->
-                        <div class="gallery" style="display: flex; gap: 2px;">
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/CLINICA CARDIO INFANTIL-1.png" alt="Imagen de la galería 1" onclick="changeMainImage(this, 'portfolio-item-6')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/CLINICA CARDIO INFANTIL-2.png" alt="Imagen de la galería 2" onclick="changeMainImage(this, 'portfolio-item-6')">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="./sources/imgs/CLINICA CARDIO INFANTIL-3.png" alt="Imagen de la galería 3" onclick="changeMainImage(this, 'portfolio-item-6')">
-                            </div>
-                        </div>
-                        
-                        <!-- Descripción del proyecto -->
-                        <div class="project-description">
-                            <h2>Clinica cardio infantil (convias sas)  </h2>
-                            <p>convias sas:coneccion drenajes para entregas a planta de tratamiento aguas residuales, instalacion de adoquin</p>
-                        </div>
-                    </div>
-
-
-                </div>    
-            </section>
-
-
-
-            <section id="contact" class="contact">
-                <div class="container-contact">
-                    <h2>Contacto</h2>
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <img src="./sources/icnos/mensaje.png" alt="Correo Electrónico" class="contact-icon">
-                            <h3>Correo Electrónico</h3>
-                            <p><a href="mailto:lyjingenieriayconstruccion@gmail.com">lyjingenieriayconstruccion@gmail.com</a></p>
-                        </div>
-                        <div class="contact-card">
-                            <img src="./sources/icnos/whatsapp.png" alt="WhatsApp" class="contact-icon">
-                            <h3>WhatsApp</h3>
-                            <p><a href="https://wa.me/3142982778" target="_blank">314 298 2778</a></p>
-                            <p><a href="https://wa.me/3213253879" target="_blank">321 325 3879</a></p>
-                        </div>
-                        <div class="contact-card">
-                            <img src="./sources/icnos/ubicacion.png" alt="WhatsApp" class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Dirección</h3>
-                            <P>Bogotá DC</P>
-                            <p>CR100ª #41 –72 SUR</p>
-                        </div>
+                    <div class="project-description">
+                        <h3>Proyecto Heliconia</h3>
+                        <p>Constructora Bolívar: Reparación y construcción (reforzamiento) de viga perimetral para estabilización de conjunto residencial. Contrato No 10651270</p>
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2024 L&J Ingeniería y Construcción S.A.S. Todos los derechos reservados.</p>
-                <p>NIT: 901711581 -7</p>
+
+                <div class="portfolio-item" id="portfolio-item-2">
+                    <div class="main-image">
+                        <img class="main-img" src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-1.jpg" alt="Construcción de viga de cerramiento - Proyecto Caminos del Vínculo" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-1.jpg" alt="Vista 1 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-2.jpg" alt="Vista 2 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-3.jpg" alt="Vista 3 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <h3>Proyecto Caminos del Vínculo</h3>
+                        <p>Constructora Bolívar: Construcción de viga de cerramiento definitivo y muro en gavión para estabilización de terreno Torre 16 y 17. Contrato No 11610266</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" id="portfolio-item-3">
+                    <div class="main-image">
+                        <img class="main-img" src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-1.jpg" alt="Construcción de cuneta para sistema de desagüe - Caminos del Vínculo" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-1.jpg" alt="Vista 1 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-2.jpg" alt="Vista 2 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-3.jpg" alt="Vista 3 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <h3>Proyecto Caminos del Vínculo – Cuneta</h3>
+                        <p>Constructora Bolívar: Construcción de cuneta sistema de desagüe para ladera. Contrato No 11610267</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" id="portfolio-item-4">
+                    <div class="main-image">
+                        <img class="main-img" src="./sources/imgs/proyecto-calzada-la-sirena-bogota-1.jpg" alt="Construcción de calzada La Sirena, Calle 153 con Av. Boyacá - Bogotá" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-calzada-la-sirena-bogota-2.jpg" alt="Vista 2 - Construcción de calzada La Sirena, Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-4')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-calzada-la-sirena-bogota-3.jpg" alt="Vista 3 - Construcción de calzada La Sirena, Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-4')">
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <h3>Proyecto Construcción de Calzada La Sirena</h3>
+                        <p>Consorcio Vías por Bogotá IC: Construcción de calzada La Sirena, Calle 153 - Av. Boyacá. Contrato N.º CONT-011 (IDU-1810 de 2021)</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" id="portfolio-item-5">
+                    <div class="main-image">
+                        <img class="main-img" src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-1.jpg" alt="Construcción de bocatomas y estabilización de terreno - Proyecto Chingaza, Consorcio Río Blanco" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-1.jpg" alt="Vista 1 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-2.jpg" alt="Vista 2 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-3.jpg" alt="Vista 3 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <h3>Proyecto Chingaza – Consorcio Río Blanco (Acueducto de Bogotá)</h3>
+                        <p>Consorcio Río Blanco: Construcción de bocatomas y estabilización de terreno.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" id="portfolio-item-6">
+                    <div class="main-image">
+                        <img class="main-img" src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-1.jpg" alt="Conexión de drenajes y planta de tratamiento - Clínica Cardioinfantil" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-1.jpg" alt="Vista 1 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-2.jpg" alt="Vista 2 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-3.jpg" alt="Vista 3 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <h3>Clínica Cardioinfantil (Convías SAS)</h3>
+                        <p>Convías SAS: Conexión de drenajes para entrega a planta de tratamiento de aguas residuales e instalación de adoquín.</p>
+                    </div>
+                </div>
+
             </div>
-        </footer>
-        <script src="script.js"></script>
-    </body>
-    </html>
-    
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container-contact">
+                <h2>Contacto</h2>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <img src="./sources/icnos/icono-correo-electronico.png" alt="Ícono de correo electrónico" class="contact-icon" width="40" height="40" loading="lazy">
+                        <h3>Correo Electrónico</h3>
+                        <p><a href="mailto:lyjingenieriayconstruccion@gmail.com">lyjingenieriayconstruccion@gmail.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <img src="./sources/icnos/icono-whatsapp.png" alt="Ícono de WhatsApp" class="contact-icon" width="40" height="40" loading="lazy">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/573142982778?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20servicios%20de%20construcción" target="_blank" rel="noopener">314 298 2778</a></p>
+                        <p><a href="https://wa.me/573213253879?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20servicios%20de%20construcción" target="_blank" rel="noopener">321 325 3879</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <img src="./sources/icnos/icono-ubicacion.png" alt="Ícono de ubicación" class="contact-icon" width="40" height="40" loading="lazy">
+                        <h3>Dirección</h3>
+                        <p>Bogotá D.C.</p>
+                        <p>CR 100A #41-72 Sur</p>
+                    </div>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps?q=Carrera+100A+%2341-72+Sur,+Bogot%C3%A1&output=embed"
+                        width="100%"
+                        height="350"
+                        style="border:0;"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de L&J Ingeniería y Construcción S.A.S en Bogotá">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 L&J Ingeniería y Construcción S.A.S. Todos los derechos reservados.</p>
+            <p>NIT: 901711581-7</p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573142982778?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20servicios%20de%20construcción"
+       class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+        <img src="./sources/icnos/icono-whatsapp.png" alt="" width="28" height="28">
+    </a>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -375,6 +375,95 @@ footer {
     }
 }
 
+/* ===== Barra de confianza (clientes destacados) ===== */
+.trust-bar {
+    background: #fff;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.trust-bar-title {
+    font-weight: bold;
+    color: #442E59;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.trust-bar-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 1.6rem;
+}
+
+.trust-bar-list li {
+    font-size: 0.95rem;
+    color: #333;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.trust-bar-list li::before {
+    content: "✓";
+    color: #82BF80;
+    position: absolute;
+    left: 0;
+}
+
+/* ===== Mapa de contacto ===== */
+.map-wrapper {
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Botón flotante de WhatsApp ===== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1002;
+    transition: transform 0.2s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+.whatsapp-float img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Evita que las imágenes se deformen y ayuda a reservar espacio (CLS) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-img,
+.gallery-item img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.gallery-item img {
+    aspect-ratio: 1 / 1;
+}
+
 /* Estilos generales para el menú en móviles */
 @media (max-width: 768px) {
     .nav-links {
