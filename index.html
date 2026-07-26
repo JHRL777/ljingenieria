@@ -84,34 +84,196 @@
         </nav>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Construcción e Ingeniería Civil</h1>
-                <p>Transformamos tus ideas en realidad: innovación, calidad y eficiencia en cada proyecto.</p>
-                <a href="#contact" class="cta-button">Solicita tu cotización</a>
+                <div>
+                    <span class="hero-badge">Ingeniería civil con impacto real</span>
+                    <h1>Construcción e ingeniería civil para proyectos que inspiran confianza.</h1>
+                    <p>Ejecutamos obras civiles, estabilización, drenajes, vías y urbanismo con enfoque en calidad, seguridad y resultados visibles.</p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="cta-button">Ver proyectos</a>
+                        <a href="#contact" class="secondary-button">Solicitar cotización</a>
+                    </div>
+                    <ul class="hero-stats">
+                        <li><strong>+10 años</strong><span>de experiencia</span></li>
+                        <li><strong>+20 obras</strong><span>ejecutadas</span></li>
+                        <li><strong>Respuesta rápida</strong><span>por WhatsApp</span></li>
+                    </ul>
+                </div>
+                <div class="hero-card">
+                    <h3>¿Por qué elegirnos?</h3>
+                    <ul>
+                        <li>Soluciones técnicas y ejecutivas</li>
+                        <li>Enfoque en estabilidad y seguridad</li>
+                        <li>Transparencia y cumplimiento de plazos</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </header>
     <main>
-        <!-- Barra de confianza: clientes y proyectos reconocidos -->
         <section class="trust-bar" aria-label="Clientes y aliados">
-            <p class="trust-bar-title">Hemos trabajado con:</p>
-            <ul class="trust-bar-list">
-                <li>Constructora Bolívar</li>
-                <li>IDU – Instituto de Desarrollo Urbano</li>
-                <li>Consorcio Río Blanco (Acueducto de Bogotá – Chingaza)</li>
-                <li>Clínica Cardioinfantil</li>
-                <li>Consorcio Vías por Bogotá</li>
-            </ul>
+            <div class="container">
+                <p class="trust-bar-title">Confianza respaldada por proyectos reales</p>
+                <ul class="trust-bar-list">
+                    <li>Constructora Bolívar</li>
+                    <li>IDU – Instituto de Desarrollo Urbano</li>
+                    <li>Consorcio Río Blanco</li>
+                    <li>Clínica Cardioinfantil</li>
+                    <li>Consorcio Vías por Bogotá</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Proyectos destacados</p>
+                    <h2>Obras que hablan por sí solas</h2>
+                    <p>Destacamos soluciones en estabilidad de terrenos, drenajes, vías y urbanismo para que cada cliente vea el alcance y la calidad de nuestro trabajo.</p>
+                </div>
+                <div class="container-porf">
+
+                    <div class="portfolio-item" id="portfolio-item-1">
+                        <div class="main-image">
+                            <img class="main-img" src="./sources/imgs/proyecto-heliconia-constructora-bolivar-1.jpg" alt="Reforzamiento de viga perimetral - Proyecto Heliconia, Constructora Bolívar" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-2.jpg" alt="Vista 2 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-3.jpg" alt="Vista 3 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-4.jpg" alt="Vista 4 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h3>Proyecto Heliconia</h3>
+                            <p>Constructora Bolívar: reparación y construcción de viga perimetral para estabilización de conjunto residencial.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" id="portfolio-item-2">
+                        <div class="main-image">
+                            <img class="main-img" src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-1.jpg" alt="Construcción de viga de cerramiento - Proyecto Caminos del Vínculo" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-1.jpg" alt="Vista 1 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-2.jpg" alt="Vista 2 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-3.jpg" alt="Vista 3 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h3>Proyecto Caminos del Vínculo</h3>
+                            <p>Construcción de viga de cerramiento definitivo y muro en gavión para estabilización de terreno.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" id="portfolio-item-3">
+                        <div class="main-image">
+                            <img class="main-img" src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-1.jpg" alt="Construcción de cuneta para sistema de desagüe - Caminos del Vínculo" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-1.jpg" alt="Vista 1 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-2.jpg" alt="Vista 2 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-3.jpg" alt="Vista 3 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h3>Proyecto Caminos del Vínculo – Cuneta</h3>
+                            <p>Construcción de cuneta para sistema de desagüe y control de escorrentía en ladera.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" id="portfolio-item-4">
+                        <div class="main-image">
+                            <img class="main-img" src="./sources/imgs/proyecto-calzada-la-sirena-bogota-1.jpg" alt="Construcción de calzada La Sirena, Calle 153 con Av. Boyacá - Bogotá" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-calzada-la-sirena-bogota-2.jpg" alt="Vista 2 - Construcción de calzada La Sirena, Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-4')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-calzada-la-sirena-bogota-3.jpg" alt="Vista 3 - Construcción de calzada La Sirena, Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-4')">
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h3>Proyecto Construcción de Calzada La Sirena</h3>
+                            <p>Consorcio Vías por Bogotá: intervención de infraestructura vial en el corredor de la calle 153.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" id="portfolio-item-5">
+                        <div class="main-image">
+                            <img class="main-img" src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-1.jpg" alt="Construcción de bocatomas y estabilización de terreno - Proyecto Chingaza, Consorcio Río Blanco" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-1.jpg" alt="Vista 1 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-2.jpg" alt="Vista 2 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-3.jpg" alt="Vista 3 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h3>Proyecto Chingaza – Consorcio Río Blanco</h3>
+                            <p>Construcción de bocatomas y estabilización de terreno para infraestructura hidráulica.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" id="portfolio-item-6">
+                        <div class="main-image">
+                            <img class="main-img" src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-1.jpg" alt="Conexión de drenajes y planta de tratamiento - Clínica Cardioinfantil" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-1.jpg" alt="Vista 1 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-2.jpg" alt="Vista 2 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-3.jpg" alt="Vista 3 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <h3>Clínica Cardioinfantil (Convías SAS)</h3>
+                            <p>Conexión de drenajes y entrega de infraestructura para planta de tratamiento de aguas residuales.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <h2>Sobre Nosotros</h2>
+                <div class="section-heading">
+                    <p class="eyebrow">Sobre nosotros</p>
+                    <h2>Aliados estratégicos para construir con calidad y seguridad</h2>
+                    <p>Combinamos experiencia técnica, capacidad operativa y compromiso para entregar obras civiles que responden a la necesidad real de cada cliente.</p>
+                </div>
                 <div class="about-content">
                     <div class="about-child">
-                        <p><strong>Misión:</strong> Con base en nuestros valores empresariales y aprovechando las habilidades operativas y administrativas, estamos direccionados a ser un aliado estratégico de nuestros clientes y proveedores, brindando múltiples soluciones en el área del diseño, manejo, construcción y renovación de obras civiles, teniendo como principio la optimización de recursos para el desarrollo y la satisfacción de las necesidades y expectativas de nuestros clientes.</p>
+                        <h3>Misión</h3>
+                        <p>Ser un aliado estratégico de nuestros clientes y proveedores, brindando soluciones integrales en diseño, manejo, construcción y renovación de obras civiles, optimizando recursos y superando expectativas.</p>
                     </div>
                     <div class="about-child">
-                        <p><strong>Visión:</strong> L&J Ingeniería y Construcción S.A.S se proyecta para que en el año 2025, esté consolidada como una de las empresas de mayor eficiencia en la región cundiboyacense, al ser una compañía innovadora que presta valores agregados en la reducción de costos y optimización de recursos en los servicios que presta a sus aliados comerciales.</p>
+                        <h3>Visión</h3>
+                        <p>Consolidarnos como una empresa innovadora y eficiente en la región cundiboyacense, destacada por la reducción de costos, la optimización de recursos y la calidad en cada servicio prestado.</p>
                     </div>
                 </div>
             </div>
@@ -119,7 +281,11 @@
 
         <section id="services" class="services">
             <div class="container">
-                <h2>Portafolio de Servicios de Construcción e Ingeniería Civil</h2>
+                <div class="section-heading">
+                    <p class="eyebrow">Servicios</p>
+                    <h2>Soluciones completas de obra civil y construcción</h2>
+                    <p>Desde la intervención especializada hasta la obra integral, trabajamos con enfoque técnico y ejecución responsable.</p>
+                </div>
                 <div class="services-grid">
                     <div class="service-card">
                         <h3>Reparación de Acometidas</h3>
@@ -157,147 +323,17 @@
                         <h3>Construcción de Vías</h3>
                         <p>Construcción y mantenimiento de vías y carreteras.</p>
                     </div>
-                    <div class="service-card">
-                        <h3>Obra Blanca y Acabados</h3>
-                        <p>Acabados y trabajos finales en proyectos de construcción.</p>
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <h2>Proyectos Destacados</h2>
-            <div class="container-porf">
-
-                <div class="portfolio-item" id="portfolio-item-1">
-                    <div class="main-image">
-                        <img class="main-img" src="./sources/imgs/proyecto-heliconia-constructora-bolivar-1.jpg" alt="Reforzamiento de viga perimetral - Proyecto Heliconia, Constructora Bolívar" width="400" height="300" loading="lazy">
-                    </div>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-2.jpg" alt="Vista 2 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-3.jpg" alt="Vista 3 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-heliconia-constructora-bolivar-4.jpg" alt="Vista 4 - Reforzamiento de viga perimetral, Proyecto Heliconia" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-1')">
-                        </div>
-                    </div>
-                    <div class="project-description">
-                        <h3>Proyecto Heliconia</h3>
-                        <p>Constructora Bolívar: Reparación y construcción (reforzamiento) de viga perimetral para estabilización de conjunto residencial. Contrato No 10651270</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" id="portfolio-item-2">
-                    <div class="main-image">
-                        <img class="main-img" src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-1.jpg" alt="Construcción de viga de cerramiento - Proyecto Caminos del Vínculo" width="400" height="300" loading="lazy">
-                    </div>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-1.jpg" alt="Vista 1 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-2.jpg" alt="Vista 2 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-viga-cerramiento-3.jpg" alt="Vista 3 - Muro en gavión, Caminos del Vínculo" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-2')">
-                        </div>
-                    </div>
-                    <div class="project-description">
-                        <h3>Proyecto Caminos del Vínculo</h3>
-                        <p>Constructora Bolívar: Construcción de viga de cerramiento definitivo y muro en gavión para estabilización de terreno Torre 16 y 17. Contrato No 11610266</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" id="portfolio-item-3">
-                    <div class="main-image">
-                        <img class="main-img" src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-1.jpg" alt="Construcción de cuneta para sistema de desagüe - Caminos del Vínculo" width="400" height="300" loading="lazy">
-                    </div>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-1.jpg" alt="Vista 1 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-2.jpg" alt="Vista 2 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-caminos-del-vinculo-cuneta-desague-3.jpg" alt="Vista 3 - Cuneta sistema de desagüe para ladera" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-3')">
-                        </div>
-                    </div>
-                    <div class="project-description">
-                        <h3>Proyecto Caminos del Vínculo – Cuneta</h3>
-                        <p>Constructora Bolívar: Construcción de cuneta sistema de desagüe para ladera. Contrato No 11610267</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" id="portfolio-item-4">
-                    <div class="main-image">
-                        <img class="main-img" src="./sources/imgs/proyecto-calzada-la-sirena-bogota-1.jpg" alt="Construcción de calzada La Sirena, Calle 153 con Av. Boyacá - Bogotá" width="400" height="300" loading="lazy">
-                    </div>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-calzada-la-sirena-bogota-2.jpg" alt="Vista 2 - Construcción de calzada La Sirena, Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-4')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-calzada-la-sirena-bogota-3.jpg" alt="Vista 3 - Construcción de calzada La Sirena, Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-4')">
-                        </div>
-                    </div>
-                    <div class="project-description">
-                        <h3>Proyecto Construcción de Calzada La Sirena</h3>
-                        <p>Consorcio Vías por Bogotá IC: Construcción de calzada La Sirena, Calle 153 - Av. Boyacá. Contrato N.º CONT-011 (IDU-1810 de 2021)</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" id="portfolio-item-5">
-                    <div class="main-image">
-                        <img class="main-img" src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-1.jpg" alt="Construcción de bocatomas y estabilización de terreno - Proyecto Chingaza, Consorcio Río Blanco" width="400" height="300" loading="lazy">
-                    </div>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-1.jpg" alt="Vista 1 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-2.jpg" alt="Vista 2 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-chingaza-acueducto-bocatomas-3.jpg" alt="Vista 3 - Bocatomas Proyecto Chingaza, Acueducto de Bogotá" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-5')">
-                        </div>
-                    </div>
-                    <div class="project-description">
-                        <h3>Proyecto Chingaza – Consorcio Río Blanco (Acueducto de Bogotá)</h3>
-                        <p>Consorcio Río Blanco: Construcción de bocatomas y estabilización de terreno.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" id="portfolio-item-6">
-                    <div class="main-image">
-                        <img class="main-img" src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-1.jpg" alt="Conexión de drenajes y planta de tratamiento - Clínica Cardioinfantil" width="400" height="300" loading="lazy">
-                    </div>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-1.jpg" alt="Vista 1 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-2.jpg" alt="Vista 2 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./sources/imgs/proyecto-clinica-cardioinfantil-drenajes-3.jpg" alt="Vista 3 - Drenajes Clínica Cardioinfantil, Convías SAS" width="100" height="100" loading="lazy" onclick="changeMainImage(this, 'portfolio-item-6')">
-                        </div>
-                    </div>
-                    <div class="project-description">
-                        <h3>Clínica Cardioinfantil (Convías SAS)</h3>
-                        <p>Convías SAS: Conexión de drenajes para entrega a planta de tratamiento de aguas residuales e instalación de adoquín.</p>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <section id="contact" class="contact">
             <div class="container-contact">
-                <h2>Contacto</h2>
+                <div class="section-heading">
+                    <p class="eyebrow">Contacto</p>
+                    <h2>Hablemos de tu próximo proyecto</h2>
+                    <p>Responderemos con información clara y una propuesta adaptada a tus necesidades.</p>
+                </div>
                 <div class="contact-info">
                     <div class="contact-card">
                         <img src="./sources/icnos/icono-correo-electronico.png" alt="Ícono de correo electrónico" class="contact-icon" width="40" height="40" loading="lazy">
