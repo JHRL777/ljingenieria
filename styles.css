@@ -339,6 +339,10 @@ section {
     gap: 1.5rem;
 }
 
+.portfolio-item.hidden {
+    display: none;
+}
+
 .portfolio-item {
     background: var(--surface);
     border-radius: 22px;
