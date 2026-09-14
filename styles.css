@@ -603,3 +603,32 @@ footer {
         padding: 0.8rem;
     }
 }
+
+.portfolio-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.portfolio-pagination button {
+    border: 0;
+    border-radius: 6px;
+    padding: 0.7rem 1.1rem;
+    background: #e97924;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.portfolio-pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.portfolio-pagination span {
+    color: #442e59;
+    font-weight: 700;
+}

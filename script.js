@@ -1,5 +1,9 @@
 // script.js
 
+const PROJECTS_PER_PAGE = 6;
+let allPortfolioProjects = [];
+let currentPortfolioPage = 1;
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -50,9 +54,45 @@ async function renderPortfolio() {
         }
     }
 
+    allPortfolioProjects = projects;
+    currentPortfolioPage = 1;
+    setupPortfolioPagination();
+    renderPortfolioPage();
+}
+
+function setupPortfolioPagination() {
+    const previous = document.getElementById('portfolio-previous');
+    const next = document.getElementById('portfolio-next');
+    if (!previous || !next || previous.dataset.ready) return;
+
+    previous.dataset.ready = 'true';
+    previous.addEventListener('click', () => changePortfolioPage(-1));
+    next.addEventListener('click', () => changePortfolioPage(1));
+}
+
+function changePortfolioPage(direction) {
+    const totalPages = Math.ceil(allPortfolioProjects.length / PROJECTS_PER_PAGE);
+    const newPage = currentPortfolioPage + direction;
+    if (newPage < 1 || newPage > totalPages) return;
+    currentPortfolioPage = newPage;
+    renderPortfolioPage();
+    document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderPortfolioPage() {
+    const portfolioGrid = document.getElementById('portfolio-grid');
+    const pagination = document.getElementById('portfolio-pagination');
+    const previous = document.getElementById('portfolio-previous');
+    const next = document.getElementById('portfolio-next');
+    const status = document.getElementById('portfolio-page-status');
+    if (!portfolioGrid) return;
+
+    const totalPages = Math.ceil(allPortfolioProjects.length / PROJECTS_PER_PAGE);
+    const firstProject = (currentPortfolioPage - 1) * PROJECTS_PER_PAGE;
+    const pageProjects = allPortfolioProjects.slice(firstProject, firstProject + PROJECTS_PER_PAGE);
     portfolioGrid.innerHTML = '';
 
-    projects.forEach((project, index) => {
+    pageProjects.forEach((project) => {
         const card = document.createElement('article');
         card.className = 'portfolio-item';
         card.id = project.id;
@@ -92,6 +132,13 @@ async function renderPortfolio() {
             }
         });
     });
+
+    if (pagination && previous && next && status) {
+        pagination.hidden = totalPages <= 1;
+        previous.disabled = currentPortfolioPage === 1;
+        next.disabled = currentPortfolioPage === totalPages;
+        status.textContent = `Página ${currentPortfolioPage} de ${totalPages}`;
+    }
 }
 
 function changeMainImage(imageElement, portfolioItemId) {
