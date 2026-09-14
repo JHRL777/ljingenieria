@@ -29,13 +29,17 @@
       </header>
       <div class="admin-grid">
         <section class="admin-card">
-          <h2>Agregar proyecto</h2>
+          <h2 id="project-form-title">Agregar proyecto</h2>
           <form id="project-form">
+            <input id="editing-project-id" type="hidden">
             <label>Título<input id="title" type="text" maxlength="120" required></label>
             <label>Descripción<textarea id="description" rows="5" maxlength="800" required></textarea></label>
             <label>Categorías <small>Separadas por coma: vías, drenajes…</small><input id="category" type="text" maxlength="160" required></label>
-            <label>Fotos <small>Puedes seleccionar varias. Máximo 8 MB cada una.</small><input id="images" type="file" accept="image/jpeg,image/png,image/webp" multiple required></label>
-            <button type="submit">Publicar proyecto</button>
+            <label>Fotos <small id="images-help">Puedes seleccionar varias. Máximo 8 MB cada una.</small><input id="images" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+            <div class="form-actions">
+              <button type="submit" id="project-submit">Publicar proyecto</button>
+              <button type="button" id="cancel-edit" class="button-secondary" hidden>Cancelar edición</button>
+            </div>
           </form>
           <p class="form-message" id="project-message" aria-live="polite"></p>
         </section>

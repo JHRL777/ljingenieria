@@ -4,13 +4,17 @@ const dashboardView = document.getElementById('dashboard-view');
 const loginMessage = document.getElementById('login-message');
 const projectMessage = document.getElementById('project-message');
 const projectsList = document.getElementById('projects-list');
+const projectForm = document.getElementById('project-form');
+const editingProjectId = document.getElementById('editing-project-id');
+const projectSubmit = document.getElementById('project-submit');
+const cancelEdit = document.getElementById('cancel-edit');
 
 function message(element, text, type = '') { element.textContent = text; element.className = `form-message ${type}`; }
 function showDashboard(signedIn) { loginView.hidden = signedIn; dashboardView.hidden = !signedIn; if (signedIn) loadProjects(); }
 
 async function loadProjects() {
   projectsList.textContent = 'Cargando proyectos…';
-  const { data, error } = await client.from('projects').select('id,title,description,created_at,project_images(storage_path)').order('created_at', { ascending: false });
+  const { data, error } = await client.from('projects').select('id,title,description,category,created_at,project_images(storage_path,position)').order('created_at', { ascending: false });
   if (error) { projectsList.textContent = 'No fue posible cargar los proyectos.'; return; }
   projectsList.replaceChildren();
   if (!data.length) { projectsList.innerHTML = '<p class="empty">Aún no has publicado proyectos desde este panel.</p>'; return; }
@@ -19,9 +23,36 @@ async function loadProjects() {
     const details = document.createElement('div'); const title = document.createElement('strong'); title.textContent = project.title;
     const info = document.createElement('p'); info.textContent = `${project.project_images.length} foto(s) · ${project.description}`;
     details.append(title, info);
+    const actions = document.createElement('div');
+    const edit = document.createElement('button'); edit.type = 'button'; edit.textContent = 'Editar'; edit.className = 'button-secondary';
+    edit.addEventListener('click', () => startEditing(project));
     const remove = document.createElement('button'); remove.type = 'button'; remove.textContent = 'Eliminar';
-    remove.addEventListener('click', () => deleteProject(project)); row.append(details, remove); projectsList.append(row);
+    remove.addEventListener('click', () => deleteProject(project));
+    actions.append(edit, remove); row.append(details, actions); projectsList.append(row);
   });
+}
+
+function startEditing(project) {
+  editingProjectId.value = project.id;
+  document.getElementById('title').value = project.title;
+  document.getElementById('description').value = project.description;
+  document.getElementById('category').value = project.category || '';
+  document.getElementById('project-form-title').textContent = 'Editar proyecto';
+  document.getElementById('images-help').textContent = 'Opcional: selecciona fotos nuevas para agregarlas al proyecto. Máximo 8 MB cada una.';
+  projectSubmit.textContent = 'Guardar cambios';
+  cancelEdit.hidden = false;
+  message(projectMessage, 'Editando proyecto. Las fotos nuevas se agregarán a las existentes.');
+  document.getElementById('title').focus();
+  document.getElementById('project-form-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetProjectForm() {
+  projectForm.reset();
+  editingProjectId.value = '';
+  document.getElementById('project-form-title').textContent = 'Agregar proyecto';
+  document.getElementById('images-help').textContent = 'Puedes seleccionar varias. Máximo 8 MB cada una.';
+  projectSubmit.textContent = 'Publicar proyecto';
+  cancelEdit.hidden = true;
 }
 
 async function deleteProject(project) {
@@ -42,14 +73,17 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
 
 document.getElementById('logout-button').addEventListener('click', async () => { await client.auth.signOut(); showDashboard(false); });
 
-document.getElementById('project-form').addEventListener('submit', async (event) => {
+cancelEdit.addEventListener('click', () => { resetProjectForm(); message(projectMessage, 'Edición cancelada.'); });
+
+projectForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget; const submit = form.querySelector('button[type="submit"]');
   const files = [...document.getElementById('images').files];
-  if (!files.length) return;
+  const isEditing = Boolean(editingProjectId.value);
+  if (!isEditing && !files.length) { message(projectMessage, 'Selecciona al menos una foto.', 'error'); return; }
   if (files.some((file) => file.size > 8 * 1024 * 1024)) { message(projectMessage, 'Cada foto debe pesar máximo 8 MB.', 'error'); return; }
   submit.disabled = true; message(projectMessage, 'Subiendo fotos y publicando proyecto…');
-  const projectId = crypto.randomUUID(); const storagePaths = [];
+  const projectId = isEditing ? editingProjectId.value : crypto.randomUUID(); const storagePaths = [];
   try {
     for (const [index, file] of files.entries()) {
       const safeName = file.name.toLowerCase().replace(/[^a-z0-9._-]/g, '-');
@@ -57,11 +91,19 @@ document.getElementById('project-form').addEventListener('submit', async (event)
       const { error } = await client.storage.from('project-images').upload(path, file, { contentType: file.type, upsert: false });
       if (error) throw error; storagePaths.push(path);
     }
-    const { error: projectError } = await client.from('projects').insert({ id: projectId, title: document.getElementById('title').value.trim(), description: document.getElementById('description').value.trim(), category: document.getElementById('category').value.trim(), published: true });
+    const projectData = { title: document.getElementById('title').value.trim(), description: document.getElementById('description').value.trim(), category: document.getElementById('category').value.trim(), published: true };
+    const { error: projectError } = isEditing
+      ? await client.from('projects').update(projectData).eq('id', projectId)
+      : await client.from('projects').insert({ id: projectId, ...projectData });
     if (projectError) throw projectError;
-    const { error: imageError } = await client.from('project_images').insert(storagePaths.map((storage_path, position) => ({ project_id: projectId, storage_path, alt_text: document.getElementById('title').value.trim(), position })));
-    if (imageError) throw imageError;
-    form.reset(); message(projectMessage, 'Proyecto publicado correctamente.', 'success'); loadProjects();
+    if (storagePaths.length) {
+      const { data: savedImages, error: savedImagesError } = await client.from('project_images').select('position').eq('project_id', projectId).order('position', { ascending: false }).limit(1);
+      if (savedImagesError) throw savedImagesError;
+      const firstPosition = savedImages.length ? savedImages[0].position + 1 : 0;
+      const { error: imageError } = await client.from('project_images').insert(storagePaths.map((storage_path, index) => ({ project_id: projectId, storage_path, alt_text: document.getElementById('title').value.trim(), position: firstPosition + index })));
+      if (imageError) throw imageError;
+    }
+    resetProjectForm(); message(projectMessage, isEditing ? 'Cambios guardados correctamente.' : 'Proyecto publicado correctamente.', 'success'); loadProjects();
   } catch (error) {
     if (storagePaths.length) await client.storage.from('project-images').remove(storagePaths);
     message(projectMessage, `No fue posible publicar: ${error.message}`, 'error');
