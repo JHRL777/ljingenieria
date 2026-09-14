@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administrar proyectos | L&J Ingeniería</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <a class="back-link" href="index.html">← Ver sitio web</a>
+    <section class="admin-card" id="login-view">
+      <p class="eyebrow">Área privada</p>
+      <h1>Administrar proyectos</h1>
+      <p>Ingresa con el correo y contraseña creados en Supabase.</p>
+      <form id="login-form">
+        <label>Correo electrónico<input id="email" type="email" required autocomplete="email"></label>
+        <label>Contraseña<input id="password" type="password" required autocomplete="current-password"></label>
+        <button type="submit">Ingresar</button>
+      </form>
+      <p class="form-message" id="login-message" aria-live="polite"></p>
+    </section>
+
+    <section id="dashboard-view" hidden>
+      <header class="dashboard-header">
+        <div><p class="eyebrow">Área privada</p><h1>Portafolio</h1></div>
+        <button id="logout-button" class="button-secondary">Cerrar sesión</button>
+      </header>
+      <div class="admin-grid">
+        <section class="admin-card">
+          <h2>Agregar proyecto</h2>
+          <form id="project-form">
+            <label>Título<input id="title" type="text" maxlength="120" required></label>
+            <label>Descripción<textarea id="description" rows="5" maxlength="800" required></textarea></label>
+            <label>Categorías <small>Separadas por coma: vías, drenajes…</small><input id="category" type="text" maxlength="160" required></label>
+            <label>Fotos <small>Puedes seleccionar varias. Máximo 8 MB cada una.</small><input id="images" type="file" accept="image/jpeg,image/png,image/webp" multiple required></label>
+            <button type="submit">Publicar proyecto</button>
+          </form>
+          <p class="form-message" id="project-message" aria-live="polite"></p>
+        </section>
+        <section class="admin-card">
+          <h2>Proyectos publicados</h2>
+          <div id="projects-list" class="projects-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

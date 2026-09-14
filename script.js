@@ -22,11 +22,33 @@ document.addEventListener('DOMContentLoaded', function() {
     renderPortfolio();
 });
 
-function renderPortfolio() {
+async function renderPortfolio() {
     const portfolioGrid = document.getElementById('portfolio-grid');
-    const projects = window.portfolioProjects || [];
+    let projects = window.portfolioProjects || [];
 
     if (!portfolioGrid) return;
+
+    // Los proyectos locales se conservan mientras migras el portafolio existente.
+    // Los nuevos se cargan desde Supabase y se muestran junto a ellos.
+    if (window.supabaseClient) {
+        const { data, error } = await window.supabaseClient
+            .from('projects')
+            .select('id,title,description,category,project_images(storage_path,alt_text,position)')
+            .eq('published', true)
+            .order('created_at', { ascending: false });
+        if (!error && data) {
+            const remoteProjects = data.map((project) => ({
+                ...project,
+                images: project.project_images
+                    .sort((a, b) => a.position - b.position)
+                    .map((image) => ({
+                        src: window.supabaseClient.storage.from('project-images').getPublicUrl(image.storage_path).data.publicUrl,
+                        alt: image.alt_text || project.title
+                    }))
+            }));
+            projects = [...remoteProjects, ...projects.filter((local) => !remoteProjects.some((remote) => remote.id === local.id))];
+        }
+    }
 
     portfolioGrid.innerHTML = '';
 
