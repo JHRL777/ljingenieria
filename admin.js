@@ -8,6 +8,9 @@ const projectForm = document.getElementById('project-form');
 const editingProjectId = document.getElementById('editing-project-id');
 const projectSubmit = document.getElementById('project-submit');
 const cancelEdit = document.getElementById('cancel-edit');
+const imagesInput = document.getElementById('images');
+const uploadPreview = document.getElementById('upload-preview');
+let previewUrls = [];
 
 function message(element, text, type = '') { element.textContent = text; element.className = `form-message ${type}`; }
 function showDashboard(signedIn) { loginView.hidden = signedIn; dashboardView.hidden = !signedIn; if (signedIn) loadProjects(); }
@@ -38,7 +41,7 @@ function startEditing(project) {
   document.getElementById('description').value = project.description;
   document.getElementById('category').value = project.category || '';
   document.getElementById('project-form-title').textContent = 'Editar proyecto';
-  document.getElementById('images-help').textContent = 'Opcional: selecciona fotos nuevas para agregarlas al proyecto. Máximo 8 MB cada una.';
+  document.getElementById('images-help').textContent = 'Opcional: selecciona hasta 6 fotos nuevas para agregarlas al proyecto. Máximo 8 MB cada una.';
   projectSubmit.textContent = 'Guardar cambios';
   cancelEdit.hidden = false;
   message(projectMessage, 'Editando proyecto. Las fotos nuevas se agregarán a las existentes.');
@@ -48,12 +51,54 @@ function startEditing(project) {
 
 function resetProjectForm() {
   projectForm.reset();
+  clearImagePreview();
   editingProjectId.value = '';
   document.getElementById('project-form-title').textContent = 'Agregar proyecto';
-  document.getElementById('images-help').textContent = 'Puedes seleccionar varias. Máximo 8 MB cada una.';
+  document.getElementById('images-help').textContent = 'Selecciona hasta 6 fotos. Máximo 8 MB cada una.';
   projectSubmit.textContent = 'Publicar proyecto';
   cancelEdit.hidden = true;
 }
+
+function clearImagePreview() {
+  previewUrls.forEach((url) => URL.revokeObjectURL(url));
+  previewUrls = [];
+  uploadPreview.replaceChildren();
+}
+
+function renderImagePreview() {
+  clearImagePreview();
+  [...imagesInput.files].forEach((file, index) => {
+    const item = document.createElement('li');
+    const thumbnail = document.createElement('img');
+    const url = URL.createObjectURL(file);
+    previewUrls.push(url);
+    thumbnail.src = url;
+    thumbnail.alt = '';
+    const name = document.createElement('span');
+    name.textContent = `${index + 1}. ${file.name} (${Math.ceil(file.size / 1024)} KB)`;
+    const remove = document.createElement('button');
+    remove.type = 'button'; remove.textContent = 'Quitar';
+    remove.addEventListener('click', () => {
+      const files = [...imagesInput.files];
+      const replacement = new DataTransfer();
+      files.filter((_, fileIndex) => fileIndex !== index).forEach((selectedFile) => replacement.items.add(selectedFile));
+      imagesInput.files = replacement.files;
+      renderImagePreview();
+    });
+    item.append(thumbnail, name, remove); uploadPreview.append(item);
+  });
+}
+
+imagesInput.addEventListener('change', () => {
+  if (imagesInput.files.length > 6) {
+    imagesInput.value = '';
+    clearImagePreview();
+    message(projectMessage, 'Puedes seleccionar un máximo de 6 fotos por carga.', 'error');
+    return;
+  }
+  renderImagePreview();
+  if (imagesInput.files.length) message(projectMessage, `${imagesInput.files.length} foto(s) seleccionada(s).`);
+});
 
 async function deleteProject(project) {
   if (!confirm(`¿Eliminar “${project.title}”? Esta acción no se puede deshacer.`)) return;
@@ -78,7 +123,7 @@ cancelEdit.addEventListener('click', () => { resetProjectForm(); message(project
 projectForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget; const submit = form.querySelector('button[type="submit"]');
-  const files = [...document.getElementById('images').files];
+  const files = [...imagesInput.files];
   const isEditing = Boolean(editingProjectId.value);
   if (!isEditing && !files.length) { message(projectMessage, 'Selecciona al menos una foto.', 'error'); return; }
   if (files.some((file) => file.size > 8 * 1024 * 1024)) { message(projectMessage, 'Cada foto debe pesar máximo 8 MB.', 'error'); return; }

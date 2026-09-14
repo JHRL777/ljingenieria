@@ -35,7 +35,8 @@
             <label>Título<input id="title" type="text" maxlength="120" required></label>
             <label>Descripción<textarea id="description" rows="5" maxlength="800" required></textarea></label>
             <label>Categorías <small>Separadas por coma: vías, drenajes…</small><input id="category" type="text" maxlength="160" required></label>
-            <label>Fotos <small id="images-help">Puedes seleccionar varias. Máximo 8 MB cada una.</small><input id="images" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+            <label>Fotos <small id="images-help">Selecciona hasta 6 fotos. Máximo 8 MB cada una.</small><input id="images" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+            <ul id="upload-preview" class="upload-preview" aria-live="polite"></ul>
             <div class="form-actions">
               <button type="submit" id="project-submit">Publicar proyecto</button>
               <button type="button" id="cancel-edit" class="button-secondary" hidden>Cancelar edición</button>
